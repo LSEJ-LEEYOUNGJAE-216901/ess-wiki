@@ -11,112 +11,103 @@
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
-            color: #333;
         }
-        header, footer {
-            background-color: #333;
+        header {
+            background: #333;
             color: #fff;
-            padding: 1em 0;
+            padding: 1rem 0;
             text-align: center;
         }
         main {
             padding: 1em 2em;
         }
-        h1, h2, h3, h4 {
-            color: #222;
+        h1, h2, h3 {
+            color: #333;
         }
         ul {
-            padding-left: 1.5em;
+            padding-left: 20px;
         }
         li {
             margin-bottom: 0.5em;
+        }
+        .faq {
+            background: #eee;
+            padding: 1em;
+            margin: 1em 0;
+            border-left: 4px solid #333;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>ESS 영업 대응 위키 및 FAQ</h1>
-        <p><strong>Rev: 2024-12-13</strong></p>
+        <p>Rev: 2024-12-14</p>
     </header>
     <main>
-        <h2>대주제 1: ESS 개요</h2>
-        <h3>소주제 1.1: ESS의 정의와 구성 요소</h3>
-        <ul>
-            <li><strong>ESS의 정의:</strong> ESS(Energy Storage System)는 에너지를 저장하고 필요할 때 사용할 수 있도록 설계된 시스템으로, 주로 배터리와 전력 변환 장치(PCS)로 구성됩니다.</li>
-            <li><strong>주요 구성 요소:</strong>
-                <ol>
-                    <li>배터리(BAT)</li>
-                    <li>전력변환장치(PCS)</li>
-                    <li>변압기(TR) 및 기타 설비</li>
-                    <li>에너지 관리 시스템(EMS, S-Quantum)</li>
-                    <li>전력 관리 시스템(PMS, Quantum)</li>
-                </ol>
-            </li>
-            <li><strong>ESS의 용도와 장점:</strong>
-                <ul>
-                    <li>신재생에너지와 연계한 전력 저장</li>
-                    <li>피크 전력 관리 및 전력망 안정화</li>
-                    <li>전기요금 절감 및 백업 전원 제공</li>
-                </ul>
-            </li>
-        </ul>
         <h2>대주제 2: 기술 사양</h2>
         <h3>소주제 2.1: 소내전력 관련 사양</h3>
         <ul>
-            <li><strong>SBB 배터리 사양:</strong>
-                <ul>
-                    <li>SBB1.0: 3P4W 120/208Vac(±5%) 50/60Hz, 22kW</li>
-                    <li>SBB1.5: 3P4W 480Vac(±5%) 50/60Hz, 29.5kW</li>
-                </ul>
-            </li>
-            <li><strong>PCS의 기본 사양:</strong>
-                <ul>
-                    <li>제어전원: 3상3선 200V</li>
-                    <li>피크 용량: 25kW (PMS 포함)</li>
-                    <li>입력 포트: 하나만 필요</li>
-                </ul>
-            </li>
+            <li><strong>SBB 배터리 사양</strong></li>
+            <ul>
+                <li>SBB1.0: 3P4W 120/208Vac(±5%) 50/60Hz, 22kW</li>
+                <li>SBB1.5: 3P4W 480Vac(±5%) 50/60Hz, 29.5kW</li>
+            </ul>
+            <li><strong>PCS의 기본 사양</strong></li>
+            <ul>
+                <li>제어전원: 3상3선 200V</li>
+                <li>피크 용량: 25kW (PMS 포함)</li>
+                <li>입력 포트: 하나만 필요</li>
+            </ul>
         </ul>
+
         <h3>소주제 2.2: PCS 설계 및 유지보수</h3>
         <ul>
-            <li><strong>샘스볼트(Sem's Bolt) 적용:</strong>
-                <ul>
-                    <li>샘스볼트는 풀림 방지에 특화된 기능 조합형 볼트로, 유지보수 시 부품의 탈거를 전제로 하지 않는 부분에 적용됨.</li>
-                </ul>
-            </li>
-            <li><strong>PCS 및 TR 설계 권장사항:</strong>
-                <ul>
-                    <li>변압기는 PCS 정격의 1.2배 용량으로 설계 권장</li>
-                </ul>
-            </li>
+            <li><strong>샘스볼트(Sem's Bolt) 적용</strong></li>
+            <ul>
+                <li>샘스볼트는 풀림 방지에 특화된 기능 조합형 볼트로, 유지보수 시 부품의 탈거를 전제로 하지 않는 부분에 적용됨.</li>
+                <li>파워엑스 군마2 버전(2024년 11월 13일 출하)부터 적용.</li>
+            </ul>
         </ul>
+
+        <h3>소주제 2.3: EMS (S-Quantum)</h3>
+        <ul>
+            <li><strong>EMS의 주요 기능</strong></li>
+            <ul>
+                <li>Modbus Map 데이터를 통해 배터리 상태 및 시스템 상태를 모니터링.</li>
+                <li>Scheduler 기능을 활용하여 전력값, 전압값 등 주요 데이터를 관리.</li>
+                <li>전력량 및 계측 데이터를 기반으로 시스템 동작 제어.</li>
+            </ul>
+        </ul>
+
         <h2>대주제 3: 물류 및 현장 관리</h2>
+        <h3>소주제 3.1: 음성 공장의 컨테이너 관리</h3>
         <ul>
-            <li><strong>컨테이너 이동 및 하중 관리:</strong>
-                <ul>
-                    <li>컨테이너는 모서리 각 파이프와 코너다이케스트에 하중이 집중됨.</li>
-                </ul>
-            </li>
+            <li>컨테이너는 모서리 각 파이프와 코너다이케스트에 하중이 집중됨.</li>
+            <li>지게차 사용 시 긴 지게발로 각 파이프를 잡아야 안전하게 이동 가능.</li>
+            <li>이 내용은 음성 공장에서의 이동 작업에 한정된 사례임.</li>
         </ul>
-        <h2>대주제 4: 정책 및 시장</h2>
+
+        <h2>대주제 5: 안건별 사례 (트러블 슈팅)</h2>
+        <h3>사례 1: 에디슨파워 치바사쿠라 안건</h3>
         <ul>
-            <li><strong>FIT/FIP 제도와 ESS:</strong>
-                <ul>
-                    <li>ESS 설치를 통해 잉여 전력을 저장하고, FIP(Feed-in Premium)와 같은 시장 기반 제도를 활용하여 추가 수익 창출 가능.</li>
-                </ul>
-            </li>
+            <li><strong>HSQT2-500 트랜스듀서 사용 사례</strong></li>
+            <ul>
+                <li>S-Quantum은 트랜스듀서 데이터를 그대로 읽어와 전력량 누적 데이터를 전달.</li>
+                <li>Current interval 및 Power interval 설정 간격을 1초로 조정 권장.</li>
+            </ul>
         </ul>
-        <h2>대주제 5: 고객 FAQ</h2>
-        <ul>
-            <li><strong>FAQ 1:</strong>
-                <ul>
-                    <li>Quantum 유지보수를 위해 443 포트 권한이 필요한 이유: 443 포트는 유지보수를 위한 터미널 접속 포트입니다.</li>
-                </ul>
-            </li>
-        </ul>
+
+        <h2>대주제 6: 고객 FAQ</h2>
+        <div class="faq">
+            <h3>FAQ 1: Quantum 유지보수 관련</h3>
+            <p><strong>Question:</strong> Quantum 유지보수를 위해 443 포트 out bound 권한이 필요한 이유는 무엇인가요?</p>
+            <p><strong>Answer:</strong> 443 포트는 Quantum 고장 시 유지보수를 위한 터미널 접속 포트입니다. 요청 시 고객 또는 관리자에 의해 열어주면 유지보수가 가능합니다.</p>
+        </div>
+        <div class="faq">
+            <h3>FAQ 2: 전력량 차이 문제</h3>
+            <p><strong>Question:</strong> TSO 미터와 S-Quantum 간 전력량 차이가 발생하는 이유는 무엇인가요?</p>
+            <p><strong>Answer:</strong> 이는 미터의 계측 특성 차이에 기인하며, S-Quantum은 트랜스듀서 데이터를 변환 없이 그대로 사용합니다. 전력량 누적 데이터는 변환 없이 전달됩니다.</p>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2024 ESS Wiki</p>
-    </footer>
 </body>
 </html>
